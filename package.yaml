@@ -1,0 +1,36 @@
+name:        th-env
+version:     0.1.0.0
+synopsis:    Template Haskell splice that expands to an environment variable
+
+description: TH splice that expands to an environment variable value.
+             Can be used to embed build-time parameters in your application.
+
+github:      dzhus/th-env
+license:     BSD3
+author:      Dmitry Dzhus
+maintainer:  dima@dzhus.org
+category:    Template Haskell
+
+extra-source-files:
+  - CHANGELOG.md
+  - README.md
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+
+dependencies:
+  - base < 5
+
+library:
+  source-dirs: src
+  dependencies:
+    - template-haskell
+
+tests:
+  readme:
+    main: README.lhs
+    ghc-options:  -pgmL markdown-unlit
+    dependencies:
+      - markdown-unlit
+      - th-env
