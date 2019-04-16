@@ -9,7 +9,11 @@ where
 import Language.Haskell.TH
 import System.Environment
 
-envQ :: String -> Q Exp
+-- | Produce a @Maybe String@ expression with the current value of an
+-- environment variable.
+envQ :: String
+     -- ^ Environment variable name.
+     -> Q Exp
 envQ name =
   runIO (lookupEnv name) >>= \case
     Just (v :: String) -> [e|Just v|]
