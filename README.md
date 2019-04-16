@@ -10,5 +10,5 @@ import Data.Maybe
 import Language.Haskell.TH.Env
 
 main :: IO ()
-main = print $ "Running app compiled by " ++ fromMaybe "?" $(envQ "USER")
+main = print $ "Running app compiled by " ++ fromMaybe "?" $$(envQ "USER")
 ```
