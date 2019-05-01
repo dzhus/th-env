@@ -6,15 +6,17 @@ module Language.Haskell.TH.Env (envQ)
 
 where
 
+import Data.String
 import Language.Haskell.TH
 import System.Environment
 
 -- | Produce a typed expression with the current value of an
 -- environment variable.
-envQ :: String
+envQ :: IsString a
+     => String
      -- ^ Environment variable name.
-     -> TExpQ (Maybe String)
+     -> TExpQ (Maybe a)
 envQ name =
   runIO (lookupEnv name) >>= \case
-    Just (v :: String) -> [|| Just v ||]
-    Nothing            -> [|| Nothing ||]
+    Just v  -> [|| Just (fromString v) ||]
+    Nothing -> [|| Nothing ||]
