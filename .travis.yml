@@ -18,7 +18,7 @@ before_install:
 - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
 script:
-# TODO https://github.com/ndmitchell/hlint/issues/332 - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s .
+- curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s .
 - stack $ARGS --install-ghc --no-terminal build $FLAGS --pedantic --haddock --no-haddock-deps --test --bench
 
 cache:
