@@ -1,5 +1,5 @@
 name:        th-env
-version:     0.1.0.0
+version:     0.1.0.1
 synopsis:    Template Haskell splice that expands to an environment variable
 
 description: TH splice that expands to an environment variable value.
