@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0.3]
+
+### Changed
+
+- [#2](https://github.com/dzhus/th-env/pull/2) GHC 9.x / `template-haskell-2.17` support
+
 ## [0.1.0.2] - 2020-06-03
 
 ### Changed
