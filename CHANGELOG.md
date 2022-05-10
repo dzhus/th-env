@@ -1,6 +1,8 @@
 # Changelog
 
-## [0.1.1]
+## [0.1.1] - 2022-05-10
+
+## Added
 
 - [#6](https://github.com/dzhus/th-env/pull/6) Add `envQ'` variant
   that requires the environment variable to be set at compilation time
